@@ -8,7 +8,7 @@ int lengthOfLongestSubstring(char* s) {
 
     for (int i =0; s[i] != '\0'; i++) {
         unsigned char c = (unsigned char) s[i];
-        if (len[c] >= start) {
+        if (last[c] >= start) {
             start = last[c] + 1;
         }
         last[c] = i;
