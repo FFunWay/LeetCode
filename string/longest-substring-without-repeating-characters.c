@@ -1,19 +1,24 @@
 int lengthOfLongestSubstring(char* s) {
-    int last[256];
-    for (int i = 0; i < 256 ; i++){
-        last[i] = -1;
-    }
+    if (s == NULL || s[0]== '\0')
+        return 0;
+
+    int last[256] = {0};
     int start = 0;
-    int best = 0;
+    int len = 0;
 
     for (int i =0; s[i] != '\0'; i++) {
         unsigned char c = (unsigned char) s[i];
-        if (last[c] >= start) {
-            start = last[c] + 1;
+        last[c] ++;
+        while (last[c] > 1) {
+            unsigned char c1 = (unsigned char) s[start];
+            last[c1] --;
+            start ++;
         }
-        last[c] = i;
-        int len = i -start +1;
-        if (len > best) best = len; 
+
+        int currlen = i - start +1;
+        if (currlen > len) {
+            len = currlen;
+        }
     }
-    return best;
+    return len;
 }
