@@ -5,6 +5,9 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
+        if len(s) != len(t):
+            return False
+            
         count = {}
         for char in s:
             if char not in count:
