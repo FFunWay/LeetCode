@@ -7,7 +7,7 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-            
+
         count = {}
         for char in s:
             if char not in count:
@@ -18,14 +18,12 @@ class Solution(object):
         for char in t:
             if char not in count:
                 return False
-            elif char in count:
+            elif :
                 count[char] -= 1
 
-            
 
         for char in count:
             if count[char] != 0:
                 return False
 
-            if count[char] == 0:
-                return True
+        return True
