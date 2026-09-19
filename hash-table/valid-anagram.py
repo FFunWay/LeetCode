@@ -18,7 +18,7 @@ class Solution(object):
         for char in t:
             if char not in count:
                 return False
-            elif :
+            else:
                 count[char] -= 1
 
 
