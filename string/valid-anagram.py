@@ -21,5 +21,6 @@ class Solution(object):
             if count[char] != 0:
                 return False
 
-            else:
-                return True
+            for char in count:
+                if count[char] == 0:
+                    return True
