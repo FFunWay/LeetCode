@@ -18,9 +18,11 @@ class Solution(object):
             elif char in count:
                 count[char] -= 1
 
+            
+
+        for char in count:
             if count[char] != 0:
                 return False
 
-            for char in count:
-                if count[char] == 0:
-                    return True
+            if count[char] == 0:
+                return True
